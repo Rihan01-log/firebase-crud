@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:firebasecrud/addscreen.dart';
-import 'package:firebasecrud/model.dart';
 import 'package:firebasecrud/provider.dart';
 import 'package:firebasecrud/upadate.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +49,7 @@ class _HomeState extends State<Home> {
               elevation: 3,
               child: ListTile(
                 title: Text(data.name ?? 'no'),
-                // subtitle: ,
+                subtitle: Text(data.schoolName!),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

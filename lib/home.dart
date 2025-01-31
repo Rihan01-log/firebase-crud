@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                     IconButton(
                         onPressed: () {
                           Provider.of<Studentprovider>(context, listen: false)
-                              .deleteS(data.id ?? 'np');
+                              .deleteS(data.id!);
                         },
                         icon: Icon(Icons.delete))
                   ],

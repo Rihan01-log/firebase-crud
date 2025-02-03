@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                               ));
                         },
                         icon: Icon(Icons.edit)),
-                    IconButton(
+                    IconButton( 
                         onPressed: () {
                           Provider.of<Studentprovider>(context, listen: false)
                               .deleteS(data.id!);

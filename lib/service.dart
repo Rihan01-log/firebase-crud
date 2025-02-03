@@ -6,6 +6,7 @@ import 'package:firebasecrud/model.dart';
 class StudentService {
   final CollectionReference storeData =
       FirebaseFirestore.instance.collection('collection');
+
   Future<List<Model>> getDetails() async {
     try {
       final data = await storeData.get();
@@ -23,7 +24,7 @@ class StudentService {
   Future<void> addStudent(Model data) async {
     try {
       await storeData.add(data.toBase());
-    } catch (e) {
+    } on FirebaseException catch (e) {
       log('$e');
     }
   }
@@ -31,7 +32,7 @@ class StudentService {
   Future<void> updatData(String id, Model data) async {
     try {
       await storeData.doc(id).update(data.toBase());
-    } catch (e) {
+    } on FirebaseException catch (e) {
       log('error in update:$e');
     }
   }
@@ -39,7 +40,7 @@ class StudentService {
   Future<void> deleteData(String id) async {
     try {
       await storeData.doc(id).delete();
-    } catch (e) {
+    } on FirebaseException catch (e) {
       log('error in delete:$e');
     }
   }

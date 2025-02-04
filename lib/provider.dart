@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Studentprovider extends ChangeNotifier {
-  StudentService service = StudentService();
+  final StudentService service = StudentService();
   List<Model> student = [];
 
   Future<void> getAll() async {

@@ -25,7 +25,7 @@ class StudentService {
     try {
       await storeData.add(data.toBase());
     } on FirebaseException catch (e) {
-      log('$e');
+      log('error in add:$e');
     }
   }
 

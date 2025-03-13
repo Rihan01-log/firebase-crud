@@ -4,7 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebasecrud/model.dart';
 
 class StudentService {
-  final CollectionReference storeData =
+  CollectionReference storeData =
       FirebaseFirestore.instance.collection('collection');
 
   Future<List<Model>> getDetails() async {
@@ -18,7 +18,7 @@ class StudentService {
     } on FirebaseException catch (e) {
       log(e.code);
     }
-    throw Exception('error geting data');
+    throw Exception('error getting data');
   }
 
   Future<void> addStudent(Model data) async {

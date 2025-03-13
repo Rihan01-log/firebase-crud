@@ -23,7 +23,6 @@ class _HomeState extends State<Home> {
       Provider.of<Studentprovider>(context, listen: false).getAll();
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
